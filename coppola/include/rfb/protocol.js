@@ -84,6 +84,7 @@ define(["require","include/net/io",
         this.screen = screen;
         this.version = 0.0;
         this.state = states["stopped"];
+	this.cfg = {};
         this.pixelFormat = null;
         this.encodings = new encodings(network,pixelFormat,screen.graphic);
 	this.io = {
@@ -133,10 +134,12 @@ define(["require","include/net/io",
         }
         
         var handleError = (function(e,critical) {
-            console.error(e);
+            console.log(e);
+	    alert(e);
             if(critical) {
-                this.state = states["error"];
+                this.state = states["stopped"];
                 this.close();
+		document.location.href = document.location.href;
             }
             this.onError.dispatch(e,critical);
         }).bind(this);
@@ -226,7 +229,7 @@ define(["require","include/net/io",
 	}
 	
         var readErrorMessage = function() {
-            var errorLength = network.read32(1)[0];
+            var errorLength = network.read32BE(1)[0];
             return network.readString(errorLength);
         }
         
@@ -258,7 +261,7 @@ define(["require","include/net/io",
                     }
                     return true;
                 case 2: // Use VNC auth, i.e. using DES for handshake
-                    securityHandler = new vncAuth(network,options.password);
+                    securityHandler = new vncAuth(network,this.cfg.password);
                     return true;
                 default:
                     handleError("Server only allows unsupported security types, only None and VNC is supported ",true);
@@ -298,9 +301,10 @@ define(["require","include/net/io",
         }).bind(this);
         
         
-        this.connect = function(server,port) {
+        this.connect = function(server,port,options) {
             if(this.state !== states["stopped"])
                 return;
+	    this.cfg = options || {};
             network.connect(server,port);
         }
 

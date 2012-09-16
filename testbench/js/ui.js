@@ -24,7 +24,7 @@ var uiController = function($scope) {
     $scope.connectionInfo = {
         host : 'ws-jmosshammer',
         port: 4430,
-        pass: 'testtest',
+        pass: '',
         disabled:false
     };
     
@@ -47,7 +47,10 @@ var uiController = function($scope) {
     $scope.connect = function() {
         $scope.rfb.connect(
             $scope.connectionInfo.host,
-            $scope.connectionInfo.port
+            $scope.connectionInfo.port,
+	    {
+		password: $scope.connectionInfo.pass
+	    }
         );
         $scope.connectionInfo.disabled=true;
     }
@@ -71,8 +74,7 @@ var uiController = function($scope) {
             height: 500,
             width:500,
             resize:true,
-            protocol: 'rfb',
-	    password: $scope.connectionInfo.pass
+            protocol: 'rfb'
         });
         
         window.mainScreen.onReady(function(rfb) {

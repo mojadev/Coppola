@@ -62,6 +62,6 @@ define(['lib/des'],function() {
             return this.success;
         }
         
-        console.log("intitated vncAuth");        
+        console.log("intitated vncAuth :"+this.success);        
     }
 })
