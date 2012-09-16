@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="82">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="testserver" root=".">
+      <df name="include">
+        <in>config.h</in>
+      </df>
+      <df name="libvnc">
+        <df name="tightvnc-filetransfer">
+          <in>filelistinfo.c</in>
+          <in>filelistinfo.h</in>
+          <in>filetransfermsg.c</in>
+          <in>filetransfermsg.h</in>
+          <in>handlefiletransferrequest.c</in>
+          <in>handlefiletransferrequest.h</in>
+          <in>rfbtightproto.h</in>
+          <in>rfbtightserver.c</in>
+        </df>
+        <in>auth.c</in>
+        <in>cargs.c</in>
+        <in>corre.c</in>
+        <in>cursor.c</in>
+        <in>cutpaste.c</in>
+        <in>draw.c</in>
+        <in>font.c</in>
+        <in>hextile.c</in>
+        <in>httpd.c</in>
+        <in>main.c</in>
+        <in>private.h</in>
+        <in>rfbcrypto.h</in>
+        <in>rfbcrypto_gnutls.c</in>
+        <in>rfbcrypto_included.c</in>
+        <in>rfbcrypto_openssl.c</in>
+        <in>rfbregion.c</in>
+        <in>rfbserver.c</in>
+        <in>rfbssl.h</in>
+        <in>rfbssl_gnutls.c</in>
+        <in>rfbssl_none.c</in>
+        <in>rfbssl_openssl.c</in>
+        <in>rre.c</in>
+        <in>scale.c</in>
+        <in>scale.h</in>
+        <in>selbox.c</in>
+        <in>sockets.c</in>
+        <in>stats.c</in>
+        <in>tableinit24.c</in>
+        <in>tableinitcmtemplate.c</in>
+        <in>tableinittctemplate.c</in>
+        <in>tabletrans24template.c</in>
+        <in>tabletranstemplate.c</in>
+        <in>tight.c</in>
+        <in>translate.c</in>
+        <in>ultra.c</in>
+        <in>websockets.c</in>
+        <in>zlib.c</in>
+        <in>zrle.c</in>
+        <in>zrleencodetemplate.c</in>
+        <in>zrleoutstream.c</in>
+        <in>zrleoutstream.h</in>
+        <in>zrlepalettehelper.c</in>
+        <in>zrlepalettehelper.h</in>
+        <in>zrletypes.h</in>
+      </df>
+      <in>example.c</in>
+      <in>http_server.c</in>
+      <in>vnctestserver.c</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <preprocessorList>
+              <Elem>_OPENMP=200505</Elem>
+            </preprocessorList>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="example.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/auth.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/cargs.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/corre.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/cursor.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/cutpaste.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/draw.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/font.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/hextile.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/httpd.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/main.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/private.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libvnc/rfbcrypto.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libvnc/rfbcrypto_gnutls.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbcrypto_included.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbcrypto_openssl.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbregion.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbserver.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbssl.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libvnc/rfbssl_gnutls.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbssl_none.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rfbssl_openssl.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/rre.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/scale.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/scale.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libvnc/selbox.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/sockets.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/stats.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tableinit24.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tableinitcmtemplate.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tableinittctemplate.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tabletrans24template.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tabletranstemplate.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tight.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/filelistinfo.c"
+            ex="true"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/filelistinfo.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/filetransfermsg.c"
+            ex="true"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/filetransfermsg.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/handlefiletransferrequest.c"
+            ex="true"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/handlefiletransferrequest.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/rfbtightproto.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libvnc/tightvnc-filetransfer/rfbtightserver.c"
+            ex="true"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libvnc/translate.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/ultra.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/websockets.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/zlib.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/zrle.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/zrleencodetemplate.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/zrleoutstream.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/zrleoutstream.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libvnc/zrlepalettehelper.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libvnc/zrlepalettehelper.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libvnc/zrletypes.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="vnctestserver.c" ex="false" tool="0" flavor2="3">
+        <cTool>
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

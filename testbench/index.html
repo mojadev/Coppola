@@ -1,0 +1,76 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html  ng-app>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta http-equiv=="CACHE-CONTROL" content="NO-CACHE">
+  <title>coppola Testbench</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/libs/angularjs.js"></script>
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/libs/typedarray.js"></script>
+  <script src="js/ui.js"></script>
+</head>
+<body>
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  
+  <div class="ctrlBox" ng-controller="uiController" >
+      <fieldset>  
+          <legend>Connection</legend>
+      Host 
+            <input type="text" style="width:90px" ng-model="connectionInfo.host"></input>
+            <input style="width:35px" type="number" ng-model="connectionInfo.port"></input>
+            <input type="password" ng-model="connectionInfo.pass"></input><br/>
+            
+            <button ng-click="connect()" >
+                Connect
+            </button>
+            <button ng-click="dump()" >
+                Network snapshot
+            </button>
+      </fieldset> 
+      <fieldset >
+          <legend>Debug</legend>
+          
+          <label ng-repeat="field in inputFields" for="{{field.lbl}}">{{field.lbl}}
+                <input type="{{field.type}}" name="{{field.lbl}}" ng-model="field.value" ng-change="change()" id="id{{field.lbl}}" /><br/>
+          </label>
+          <br/>
+          
+      </fieldset>
+  </div>
+<!--
+  <div class="debugBox"  ng-controller="logController">
+      <div class="title">Log</div>
+      <div class="filter">
+        <label>Log</label><input ng-model="filter.log" type="checkbox" value="log"/>
+        <label>Debug</label><input ng-model="filter.debug" type="checkbox" value="debug"/>
+        <label>Error</label><input ng-model="filter.error" type="checkbox" value="error"/>
+
+      </div>
+      <ul>
+          <li class="{{entry.type}}"  ng-repeat="entry in log | filter:messageFilter">{{entry.time}} - {{entry.message}}</li>
+      </ul>
+  </div>
+-->    
+  <div id="main" class="screen">
+     
+  </div>
+  <div></div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/plugins.js"></script>
+  <script data-main="../coppola/coppola.js" src="../coppola/lib/require.js"></script>
+  <script>
+    
+  </script>
+  
+</body>
+</html>
