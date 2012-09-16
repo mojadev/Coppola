@@ -59,6 +59,6 @@ Currently I'm working on further encodings, namely hextile (support is almost fi
 I havent tested it in IE10 yet, but it won't work in version < 9 ever. Those browsers are slow, and there are viewers like noVNC that support those browsers if you dare to use flash.
 IE10 support and maybe IE9 (there's a websocket bridge plugin for this and maybe I'll use the flash websocket emulation)
 
-**Were those questions really asked frequently*
+**Were those questions really asked frequently**
 
 No.
