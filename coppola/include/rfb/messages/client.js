@@ -108,7 +108,10 @@ define([],function() {
         };
         
         this.pointerEvent = function(btn,x,y) {
-            pointerEventMsg8[1] = 1<<(btn-1);
+            if(btn == 0)
+                pointerEventMsg8[1] = 0;
+            else
+                pointerEventMsg8[1] = 1<<(btn-1);
             pointerEventMsg16[1] = leToBe(x,2);
             pointerEventMsg16[2] = leToBe(y,2);
             network.send(pointerEventMsg8);

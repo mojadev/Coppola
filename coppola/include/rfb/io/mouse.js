@@ -21,21 +21,30 @@
  **/
 /* [LICENCE END] */
 define([],function() {
+    var getXY = function(e,el) {
+        return {
+            x: e.pageX - el.offsetLeft,
+            y: e.pageY - el.offsetTop
+        }
+    };
     
     return function(rfb) {
-        
+     
+        this.targetEl;
+        this.btnState = 0;
         this.startCapture = function(el) {
-            el.addEventListener("mousemove",this.mouseEv);
-            el.addEventListener("mousedown",this.mouseEv);
-            el.addEventListener("mouseup",this.mouseEv);
-	    el.onmousewheel = this.mouseScrollEv;
+            this.targetEl = el;
+            el.addEventListener("mousemove",this.mouseEv.bind(this));
+            el.addEventListener("mousedown",this.mouseEv.bind(this));
+            el.addEventListener("mouseup",this.mouseEv.bind(this));
+	    el.onmousewheel = this.mouseScrollEv.bind(this);
         }
 	
 	this.stopCapture = function(el) {
-	    el.removeEventListener("mousemove",this.mouseEv);
-            el.removeEventListener("mousedown",this.mouseEv);
-            el.removeEventListener("mouseup",this.mouseEv);
-    	    el.removeEventListener("scroll",this.mouseScrollEv);
+	    el.removeEventListener("mousemove",this.mouseEv,this);
+            el.removeEventListener("mousedown",this.mouseEv,this);
+            el.removeEventListener("mouseup",this.mouseEv,this);
+    	    el.removeEventListener("scroll",this.mouseScrollEv,this);
 	}
 	this.mouseScrollEv = function(ev) {
 	    var btn = 5;
@@ -47,10 +56,19 @@ define([],function() {
 	    return false;
 	    
 	}
+        
+        this.setButtonState = function(ev) {
+            if(ev.type == "mousedown") {    
+                this.btnState = ev.button+1;
+            } if (ev.type == "mouseup") {
+                this.btnState = 0;
+            }
+        }
+        
 	this.mouseEv = function(ev) {
-            if(ev.type == "mouseup")
-                ev.which = 0;
-            rfb.send.pointerEvent(ev.which,ev.offsetX,ev.offsetY);
+            this.setButtonState(ev);
+            var xy = getXY(ev,this.targetEl)
+            rfb.send.pointerEvent(this.btnState,xy.x,xy.y);
 	    return false;   
 	}
     }

@@ -71,7 +71,7 @@ define([],function() {
 	}
 	
 	this.moveToPos = function(ev) {
-	    var sT = document.body.scrollTop+ev.clientY;
+	    var sT = document.body.scrollTop+ev.pageY;
 	    KEY_DOM_SHIM.style.top = (sT)+"px";
 	    KEY_DOM_SHIM.focus();
 	}
