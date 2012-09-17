@@ -28,7 +28,7 @@ define([],function() {
 	13 : 0xFF0D, // Enter
 	16 : 0xFFE1, // Shift
 	17 : 0xFFE3, // Ctrl
-	18 : 0xFFE9, // ALT
+	//18 : 0xFFE9, // ALT
 	91 : 0xFFE7, // WIN
 	33 : 0xFF55, // PAGE_UP
 	34 : 0xFF56, // PAGE_DOWN
@@ -46,7 +46,7 @@ define([],function() {
 	
         var KEY_DOM_SHIM = document.createElement("input");
 	KEY_DOM_SHIM.style.position = "absolute";
-	KEY_DOM_SHIM.style.left = "-500px";
+	KEY_DOM_SHIM.style.left = "100px";
 	KEY_DOM_SHIM.style.top = "0";
         
 	var KEY_STATE = {
@@ -102,10 +102,10 @@ define([],function() {
 		rfb.send.keyEvent(0xFFE3,!KEY_STATE.CTRL,down);
 		KEY_STATE.CTRL = ev.ctrlKey;
 	    }
-	    if(ev.altKey != KEY_STATE.ALT) {
+	    /*if(ev.altKey != KEY_STATE.ALT) {
 		rfb.send.keyEvent(0xFFE9,!KEY_STATE.ALT);
 		KEY_STATE.ALT = ev.altKey;
-	    }
+	    }*/
 	    if(ev.shiftKey != KEY_STATE.SHIFT) {
 		rfb.send.keyEvent(0xFFE1,!KEY_STATE.SHIFT);
 		KEY_STATE.SHIFT = ev.shiftKey;
@@ -130,6 +130,7 @@ define([],function() {
 		    var key = v.charCodeAt(v.length-1)
 		    if(v.length <= lastlength && down)
 			key = ev.keyCode;
+                    console.log("sending " +  (down ? "DOWN " : "UP "),down,key,String.fromCharCode(key));
 		    rfb.send.keyEvent(key,down);
 		},10);
 	    }
