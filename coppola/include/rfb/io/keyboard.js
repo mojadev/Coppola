@@ -46,7 +46,7 @@ define([],function() {
 	
         var KEY_DOM_SHIM = document.createElement("input");
 	KEY_DOM_SHIM.style.position = "absolute";
-	KEY_DOM_SHIM.style.left = "100px";
+	KEY_DOM_SHIM.style.left = "-1024px";
 	KEY_DOM_SHIM.style.top = "0";
         
 	var KEY_STATE = {
